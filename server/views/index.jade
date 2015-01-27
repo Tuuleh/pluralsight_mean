@@ -1,0 +1,9 @@
+extends ../includes/layout
+
+head
+    base(href="/")
+
+block main-content
+    section.content
+        div(ng-view)
+    h2= mongoMessage    
