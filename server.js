@@ -29,11 +29,20 @@ app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
-mongoose.connect('mongodb://localhost/pluralsight');
+var databaseLocation = "";
+
+if(env==="development") {
+    mongoose.connect('mongodb://localhost/pluralsight');
+    databaseLocation = "Local pluralsight"
+}
+else {
+    mongoose.connect('mongodb://tuuli:qqmorenub1@ds039421.mongolab.com:39421/multivision');
+    databaseLocation = "MongoLabs"
+} 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error...'));
 db.once('open', function callback() {
-    console.log("pluralsight db opened");
+    console.log(databaseLocation +" db opened.");
 });
 
 var messageSchema = mongoose.Schema({message: String});
