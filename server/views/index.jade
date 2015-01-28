@@ -4,6 +4,20 @@ head
     base(href="/")
 
 block main-content
+    .navbar.navbar-inverse.navbar-fixed-top
+        .container
+            .navbar-header
+                //first content on the navbar is link to the home page
+                a.navbar-brand(href='/') MultiVision
+                    h6 -Extreme Tech Training
+            .navbar-collapse.collapse
+                ul.nav.navbar-nav
+                    li
+                        a(href='/') Home
+                div(ng-include="'/partials/account/navbar-login'") 
+
     section.content
         div(ng-view)
-    h2= mongoMessage    
+
+    footer.container.text-center
+        p &copy; 2015 Multivision corp International Ltd.

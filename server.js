@@ -1,69 +1,14 @@
-var express = require('express'),
-    stylus = require('stylus'),
-    logger = require('morgan'),
-    bodyParser = require('body-parser'),
-    mongoose = require('mongoose');
+var express = require('express');
 
 var env = process.env.NODE_ENV = process.env.NODE_ENV || 'development';
-
 var app = express();
 
-//compile function for middleware (stylus):
+//the configuration variable with the root path name that gets passed into express configuration below
+var config = require('./server/config/config')[env];
 
-function compile(str, path) {
-    return stylus(str).set('filename', path);
-}
+require('./server/config/express')(app, config);
+require('./server/config/mongoose')(config);
+require('./server/config/routes')(app);
 
-app.set('views', __dirname + '/server/views');
-app.set('view engine', 'jade');
-
-//setting up stylus
-app.use(stylus.middleware(
-    {
-        src: __dirname + '/public',
-        compile: compile
-    }
-));
-
-app.use(express.static(__dirname + '/public'));
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(bodyParser.json());
-
-var databaseLocation = "";
-
-if(env==="development") {
-    mongoose.connect('mongodb://localhost/pluralsight');
-    databaseLocation = "Local pluralsight"
-}
-else {
-    mongoose.connect('mongodb://tuuli:qqmorenub1@ds039421.mongolab.com:39421/multivision');
-    databaseLocation = "MongoLabs"
-} 
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error...'));
-db.once('open', function callback() {
-    console.log(databaseLocation +" db opened.");
-});
-
-var messageSchema = mongoose.Schema({message: String});
-var message = mongoose.model('Message', messageSchema);
-var mongoMessage;
-
-message.findOne().exec(function(err, messageDoc) {
-    mongoMessage = messageDoc.message;
-});
-
-//: specifies a space holder - partialPath
-app.get('/partials/:partialPath', function(req, res) {
-    res.render('partials/' + req.params.partialPath);
-});
-
-app.get('*', function(req, res) {
-    res.render('index', {
-        mongoMessage: mongoMessage
-    });
-});
-
-
-app.listen(process.env.PORT || 3000);
-console.log('listening on port ' + process.env.PORT)
+app.listen(config.port);
+console.log('listening on port ' + config.port);
