@@ -1,0 +1,12 @@
+//this is a file for data bootstrapping, where we tell the client
+//who the current user is
+//if bootstrappedUser exists... ('booleanized' value)
+
+if !!bootstrappedUser
+    script.
+        window.bootstrappedUserObject = !{JSON.stringify(bootstrappedUser)}
+
+//i think the stringification could have been done server side (in case not using jade)
+//basically, with this jade file, for any page that gets requested where we already have
+//a current user, there will be a script tag that contains the user info
+//after this you STILL have to tell Angular about the bootstrapped user object!

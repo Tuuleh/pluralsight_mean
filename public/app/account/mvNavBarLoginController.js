@@ -1,5 +1,21 @@
-angular.module('app').controller('mvNavBarLoginController', function($scope) {
+angular.module('app').controller('mvNavBarLoginController', function($scope, $http, mvIdentity, mvNotifier, mvAuth, $location) {
+    $scope.identity = mvIdentity;
     $scope.signin = function(username, password) {
-        console.log("Login not implemented");
+        mvAuth.authenticateUser(username, password).then(function(success){
+            if(success) {
+                mvNotifier.notify("You have successfully logged in!");
+            }
+            else {
+                mvNotifier.notify("Oops - login failure!");
+            }
+        });
+    }
+    $scope.signout = function() {
+        mvAuth.logoutUser().then(function() {
+            $scope.username = "";
+            $scope.password = "";
+            mvNotifier.notify("You have successfully logged out.");
+            $location.path('/');
+        });
     }
 });
