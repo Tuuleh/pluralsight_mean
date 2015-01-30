@@ -32,7 +32,7 @@ angular.module('app').factory('mvAuth', function($http, $q, mvIdentity, mvUser) 
             return dfd.promise;
         },
         authorizeCurrentUserForRoute: function(role) {
-            if(mvIdentity.isAuthorized(role) {
+            if(mvIdentity.isAuthorized(role)) {
                 return true;
             }
             else {

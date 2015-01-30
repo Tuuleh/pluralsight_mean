@@ -19,7 +19,7 @@ angular.module('app').config(function($routeProvider, $locationProvider){
         //route resolve: we get an empty page when the user list page is requested by someone
         //who doesn't have admin rights. We're going to redirect them back to the default page,
         //instead of the empty list page, using a route resolver
-            resolve: routeRoleChecks.admin;
+            resolve: routeRoleChecks.admin
         })
 });
 

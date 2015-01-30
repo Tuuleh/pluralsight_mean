@@ -1,142 +1,157 @@
 0 info it worked if it ends with ok
-1 verbose cli [ '/usr/bin/node',
-1 verbose cli   '/usr/bin/npm',
-1 verbose cli   'install',
-1 verbose cli   'express-session',
-1 verbose cli   '--save' ]
+1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'install', 'karma-cli', '-g' ]
 2 info using npm@1.4.28
 3 info using node@v0.10.32
-4 warn package.json pluralsight_mean@1.0.0 No description
-5 warn package.json pluralsight_mean@1.0.0 No repository field.
-6 warn package.json pluralsight_mean@1.0.0 No README data
-7 verbose readDependencies using package.json deps
-8 verbose cache add [ 'express-session@*', null ]
-9 verbose cache add name=undefined spec="express-session@*" args=["express-session@*",null]
-10 verbose parsed url { protocol: null,
-10 verbose parsed url   slashes: null,
-10 verbose parsed url   auth: null,
-10 verbose parsed url   host: null,
-10 verbose parsed url   port: null,
-10 verbose parsed url   hostname: null,
-10 verbose parsed url   hash: null,
-10 verbose parsed url   search: null,
-10 verbose parsed url   query: null,
-10 verbose parsed url   pathname: 'express-session@*',
-10 verbose parsed url   path: 'express-session@*',
-10 verbose parsed url   href: 'express-session@*' }
-11 verbose cache add name="express-session" spec="*" args=["express-session","*"]
-12 verbose parsed url { protocol: null,
-12 verbose parsed url   slashes: null,
-12 verbose parsed url   auth: null,
-12 verbose parsed url   host: null,
-12 verbose parsed url   port: null,
-12 verbose parsed url   hostname: null,
-12 verbose parsed url   hash: null,
-12 verbose parsed url   search: null,
-12 verbose parsed url   query: null,
-12 verbose parsed url   pathname: '*',
-12 verbose parsed url   path: '*',
-12 verbose parsed url   href: '*' }
-13 verbose addNamed [ 'express-session', '*' ]
-14 verbose addNamed [ null, '*' ]
-15 silly lockFile b328633d-express-session express-session@*
-16 verbose lock express-session@* /home/tuuli/.npm/b328633d-express-session.lock
-17 silly addNameRange { name: 'express-session', range: '*', hasData: false }
-18 verbose request where is /express-session
-19 verbose request registry https://registry.npmjs.org/
-20 verbose request id 41f83b5dadabf70f
-21 verbose url raw /express-session
-22 verbose url resolving [ 'https://registry.npmjs.org/', './express-session' ]
-23 verbose url resolved https://registry.npmjs.org/express-session
-24 verbose request where is https://registry.npmjs.org/express-session
-25 info trying registry request attempt 1 at 11:50:13
-26 verbose etag "315KROA61DIYBDMIVPEGRCVAT"
-27 http GET https://registry.npmjs.org/express-session
-28 info retry will retry, error on last attempt: Error: getaddrinfo ENOTFOUND
-29 info trying registry request attempt 2 at 11:50:43
-30 verbose etag "315KROA61DIYBDMIVPEGRCVAT"
-31 http GET https://registry.npmjs.org/express-session
-32 info retry will retry, error on last attempt: Error: getaddrinfo ENOTFOUND
-33 info trying registry request attempt 3 at 11:52:03
-34 verbose etag "315KROA61DIYBDMIVPEGRCVAT"
-35 http GET https://registry.npmjs.org/express-session
-36 silly registry.get cb [ 304, undefined ]
-37 verbose etag https://registry.npmjs.org/express-session from cache
-38 silly addNameRange number 2 { name: 'express-session', range: '*', hasData: true }
-39 silly addNameRange versions [ 'express-session',
-39 silly addNameRange   [ '1.0.0',
-39 silly addNameRange     '1.0.1',
-39 silly addNameRange     '1.0.2',
-39 silly addNameRange     '1.0.3',
-39 silly addNameRange     '1.0.4',
-39 silly addNameRange     '1.1.0',
-39 silly addNameRange     '1.2.0',
-39 silly addNameRange     '1.2.1',
-39 silly addNameRange     '1.3.0',
-39 silly addNameRange     '1.3.1',
-39 silly addNameRange     '1.4.0',
-39 silly addNameRange     '1.5.0',
-39 silly addNameRange     '1.5.1',
-39 silly addNameRange     '1.5.2',
-39 silly addNameRange     '1.6.0',
-39 silly addNameRange     '1.6.1',
-39 silly addNameRange     '1.6.2',
-39 silly addNameRange     '1.6.3',
-39 silly addNameRange     '1.6.4',
-39 silly addNameRange     '1.6.5',
-39 silly addNameRange     '1.7.0',
-39 silly addNameRange     '1.7.1',
-39 silly addNameRange     '1.7.2',
-39 silly addNameRange     '1.7.3',
-39 silly addNameRange     '1.7.4',
-39 silly addNameRange     '1.7.5',
-39 silly addNameRange     '1.7.6',
-39 silly addNameRange     '1.8.0',
-39 silly addNameRange     '1.8.1',
-39 silly addNameRange     '1.8.2',
-39 silly addNameRange     '1.9.0',
-39 silly addNameRange     '1.9.1',
-39 silly addNameRange     '1.9.2',
-39 silly addNameRange     '1.9.3' ] ]
-40 verbose addNamed [ 'express-session', '1.9.3' ]
-41 verbose addNamed [ '1.9.3', '1.9.3' ]
-42 silly lockFile b367e894-express-session-1-9-3 express-session@1.9.3
-43 verbose lock express-session@1.9.3 /home/tuuli/.npm/b367e894-express-session-1-9-3.lock
-44 silly lockFile 112fba45-ession-express-session-1-9-3-tgz https://registry.npmjs.org/express-session/-/express-session-1.9.3.tgz
-45 verbose lock https://registry.npmjs.org/express-session/-/express-session-1.9.3.tgz /home/tuuli/.npm/112fba45-ession-express-session-1-9-3-tgz.lock
-46 verbose addRemoteTarball [ 'https://registry.npmjs.org/express-session/-/express-session-1.9.3.tgz',
-46 verbose addRemoteTarball   '7d2fc387af6fd928775213bfe9d635a5705a84ce' ]
-47 info retry fetch attempt 1 at 11:52:03
-48 verbose fetch to= /tmp/npm-11623-1ox7WOF_/registry.npmjs.org/express-session/-/express-session-1.9.3.tgz
-49 http GET https://registry.npmjs.org/express-session/-/express-session-1.9.3.tgz
-50 error fetch failed https://registry.npmjs.org/express-session/-/express-session-1.9.3.tgz
-51 info retry will retry, error on last attempt: Error: getaddrinfo ENOTFOUND
-52 info retry fetch attempt 2 at 11:52:13
-53 verbose fetch to= /tmp/npm-11623-1ox7WOF_/registry.npmjs.org/express-session/-/express-session-1.9.3.tgz
-54 http GET https://registry.npmjs.org/express-session/-/express-session-1.9.3.tgz
-55 error fetch failed https://registry.npmjs.org/express-session/-/express-session-1.9.3.tgz
-56 info retry will retry, error on last attempt: Error: socket hang up
-57 info retry fetch attempt 3 at 11:53:13
-58 verbose fetch to= /tmp/npm-11623-1ox7WOF_/registry.npmjs.org/express-session/-/express-session-1.9.3.tgz
-59 http GET https://registry.npmjs.org/express-session/-/express-session-1.9.3.tgz
-60 error fetch failed https://registry.npmjs.org/express-session/-/express-session-1.9.3.tgz
-61 silly lockFile 112fba45-ession-express-session-1-9-3-tgz https://registry.npmjs.org/express-session/-/express-session-1.9.3.tgz
-62 silly lockFile 112fba45-ession-express-session-1-9-3-tgz https://registry.npmjs.org/express-session/-/express-session-1.9.3.tgz
-63 silly lockFile b367e894-express-session-1-9-3 express-session@1.9.3
-64 silly lockFile b367e894-express-session-1-9-3 express-session@1.9.3
-65 silly lockFile b328633d-express-session express-session@*
-66 silly lockFile b328633d-express-session express-session@*
-67 error network socket hang up
-67 error network This is most likely not a problem with npm itself
-67 error network and is related to network connectivity.
-67 error network In most cases you are behind a proxy or have bad network settings.
-67 error network
-67 error network If you are behind a proxy, please make sure that the
-67 error network 'proxy' config is set properly.  See: 'npm help config'
-68 error System Linux 3.13.0-40-generic
-69 error command "/usr/bin/node" "/usr/bin/npm" "install" "express-session" "--save"
-70 error cwd /home/tuuli/pluralsight_mean
-71 error node -v v0.10.32
-72 error npm -v 1.4.28
-73 error code ECONNRESET
-74 verbose exit [ 1, true ]
+4 verbose cache add [ 'karma-cli', null ]
+5 verbose cache add name=undefined spec="karma-cli" args=["karma-cli",null]
+6 verbose parsed url { protocol: null,
+6 verbose parsed url   slashes: null,
+6 verbose parsed url   auth: null,
+6 verbose parsed url   host: null,
+6 verbose parsed url   port: null,
+6 verbose parsed url   hostname: null,
+6 verbose parsed url   hash: null,
+6 verbose parsed url   search: null,
+6 verbose parsed url   query: null,
+6 verbose parsed url   pathname: 'karma-cli',
+6 verbose parsed url   path: 'karma-cli',
+6 verbose parsed url   href: 'karma-cli' }
+7 silly lockFile aa100f68-karma-cli karma-cli
+8 verbose lock karma-cli /home/tuuli/.npm/aa100f68-karma-cli.lock
+9 silly lockFile aa100f68-karma-cli karma-cli
+10 silly lockFile aa100f68-karma-cli karma-cli
+11 verbose addNamed [ 'karma-cli', '' ]
+12 verbose addNamed [ null, '*' ]
+13 silly lockFile 8f6f2c72-karma-cli karma-cli@
+14 verbose lock karma-cli@ /home/tuuli/.npm/8f6f2c72-karma-cli.lock
+15 silly addNameRange { name: 'karma-cli', range: '*', hasData: false }
+16 verbose request where is /karma-cli
+17 verbose request registry https://registry.npmjs.org/
+18 verbose request id cff93dae72e5d5f8
+19 verbose url raw /karma-cli
+20 verbose url resolving [ 'https://registry.npmjs.org/', './karma-cli' ]
+21 verbose url resolved https://registry.npmjs.org/karma-cli
+22 verbose request where is https://registry.npmjs.org/karma-cli
+23 info trying registry request attempt 1 at 16:57:11
+24 http GET https://registry.npmjs.org/karma-cli
+25 http 200 https://registry.npmjs.org/karma-cli
+26 silly registry.get cb [ 200,
+26 silly registry.get   { date: 'Fri, 30 Jan 2015 00:57:11 GMT',
+26 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+26 silly registry.get     etag: '"ACHOBN3QT66S71UDA1NYRF9NN"',
+26 silly registry.get     'content-type': 'application/json',
+26 silly registry.get     'cache-control': 'max-age=60',
+26 silly registry.get     'content-length': '5955',
+26 silly registry.get     'accept-ranges': 'bytes',
+26 silly registry.get     via: '1.1 varnish',
+26 silly registry.get     age: '0',
+26 silly registry.get     'x-served-by': 'cache-lax1426-LAX',
+26 silly registry.get     'x-cache': 'HIT',
+26 silly registry.get     'x-cache-hits': '1',
+26 silly registry.get     'x-timer': 'S1422579431.566488,VS0,VE40',
+26 silly registry.get     vary: 'Accept',
+26 silly registry.get     'keep-alive': 'timeout=10, max=50',
+26 silly registry.get     connection: 'Keep-Alive' } ]
+27 silly addNameRange number 2 { name: 'karma-cli', range: '*', hasData: true }
+28 silly addNameRange versions [ 'karma-cli', [ '0.0.1', '0.0.2', '0.0.3', '0.0.4' ] ]
+29 verbose addNamed [ 'karma-cli', '0.0.4' ]
+30 verbose addNamed [ '0.0.4', '0.0.4' ]
+31 silly lockFile 0ef08b95-karma-cli-0-0-4 karma-cli@0.0.4
+32 verbose lock karma-cli@0.0.4 /home/tuuli/.npm/0ef08b95-karma-cli-0-0-4.lock
+33 silly lockFile ad31c554-rg-karma-cli-karma-cli-0-0-4-tgz https://registry.npmjs.org/karma-cli/-/karma-cli-0.0.4.tgz
+34 verbose lock https://registry.npmjs.org/karma-cli/-/karma-cli-0.0.4.tgz /home/tuuli/.npm/ad31c554-rg-karma-cli-karma-cli-0-0-4-tgz.lock
+35 verbose addRemoteTarball [ 'https://registry.npmjs.org/karma-cli/-/karma-cli-0.0.4.tgz',
+35 verbose addRemoteTarball   '1840a6a2545754bb02100f09229cdd9963a6cf68' ]
+36 info retry fetch attempt 1 at 16:57:11
+37 verbose fetch to= /tmp/npm-7355-frAMYB-M/registry.npmjs.org/karma-cli/-/karma-cli-0.0.4.tgz
+38 http GET https://registry.npmjs.org/karma-cli/-/karma-cli-0.0.4.tgz
+39 http 200 https://registry.npmjs.org/karma-cli/-/karma-cli-0.0.4.tgz
+40 silly lockFile ad31c554-rg-karma-cli-karma-cli-0-0-4-tgz https://registry.npmjs.org/karma-cli/-/karma-cli-0.0.4.tgz
+41 silly lockFile ad31c554-rg-karma-cli-karma-cli-0-0-4-tgz https://registry.npmjs.org/karma-cli/-/karma-cli-0.0.4.tgz
+42 silly lockFile 0ef08b95-karma-cli-0-0-4 karma-cli@0.0.4
+43 silly lockFile 0ef08b95-karma-cli-0-0-4 karma-cli@0.0.4
+44 silly lockFile 8f6f2c72-karma-cli karma-cli@
+45 silly lockFile 8f6f2c72-karma-cli karma-cli@
+46 silly resolved [ { name: 'karma-cli',
+46 silly resolved     description: 'The Karma command line interface.',
+46 silly resolved     homepage: 'http://karma-runner.github.io/',
+46 silly resolved     repository:
+46 silly resolved      { type: 'git',
+46 silly resolved        url: 'git://github.com/karma-runner/karma-cli.git' },
+46 silly resolved     bugs: { url: 'https://github.com/karma-runner/karma-cli/issues' },
+46 silly resolved     keywords:
+46 silly resolved      [ 'karma',
+46 silly resolved        'spectacular',
+46 silly resolved        'runner',
+46 silly resolved        'karma',
+46 silly resolved        'js',
+46 silly resolved        'javascript',
+46 silly resolved        'testing',
+46 silly resolved        'test',
+46 silly resolved        'remote',
+46 silly resolved        'execution' ],
+46 silly resolved     author: { name: 'Vojta Jína', email: 'vojta.jina@gmail.com' },
+46 silly resolved     contributors: [ [Object] ],
+46 silly resolved     dependencies: { resolve: '~0.5.1' },
+46 silly resolved     peerDependencies: {},
+46 silly resolved     devDependencies:
+46 silly resolved      { grunt: '~0.4.1',
+46 silly resolved        'grunt-contrib-jshint': '~0.7.2',
+46 silly resolved        'grunt-coffeelint': '0.0.7',
+46 silly resolved        'grunt-bump': '0.0.11',
+46 silly resolved        'grunt-npm': '0.0.2',
+46 silly resolved        'grunt-auto-release': '0.0.4',
+46 silly resolved        'grunt-conventional-changelog': '~1.0.0' },
+46 silly resolved     preferGlobal: true,
+46 silly resolved     bin: { karma: './bin/karma' },
+46 silly resolved     engines: { node: '~0.8 || ~0.10' },
+46 silly resolved     version: '0.0.4',
+46 silly resolved     _id: 'karma-cli@0.0.4',
+46 silly resolved     dist:
+46 silly resolved      { shasum: '1840a6a2545754bb02100f09229cdd9963a6cf68',
+46 silly resolved        tarball: 'http://registry.npmjs.org/karma-cli/-/karma-cli-0.0.4.tgz' },
+46 silly resolved     _from: 'karma-cli@',
+46 silly resolved     _npmVersion: '1.3.21',
+46 silly resolved     _npmUser: { name: 'vojtajina', email: 'vojta.jina@gmail.com' },
+46 silly resolved     maintainers: [ [Object] ],
+46 silly resolved     directories: {},
+46 silly resolved     _shasum: '1840a6a2545754bb02100f09229cdd9963a6cf68',
+46 silly resolved     _resolved: 'https://registry.npmjs.org/karma-cli/-/karma-cli-0.0.4.tgz' } ]
+47 info install karma-cli@0.0.4 into /usr/lib
+48 info installOne karma-cli@0.0.4
+49 verbose lib/node_modules/karma-cli unbuild
+50 verbose tar unpack /home/tuuli/.npm/karma-cli/0.0.4/package.tgz
+51 silly lockFile 13d2b23c-r-usr-lib-node-modules-karma-cli tar:///usr/lib/node_modules/karma-cli
+52 verbose lock tar:///usr/lib/node_modules/karma-cli /home/tuuli/.npm/13d2b23c-r-usr-lib-node-modules-karma-cli.lock
+53 silly lockFile 124a62aa--npm-karma-cli-0-0-4-package-tgz tar:///home/tuuli/.npm/karma-cli/0.0.4/package.tgz
+54 verbose lock tar:///home/tuuli/.npm/karma-cli/0.0.4/package.tgz /home/tuuli/.npm/124a62aa--npm-karma-cli-0-0-4-package-tgz.lock
+55 silly gunzTarPerm modes [ '775', '664' ]
+56 error Error: EACCES, mkdir '/usr/lib/node_modules/karma-cli'
+56 error  { [Error: EACCES, mkdir '/usr/lib/node_modules/karma-cli']
+56 error   errno: 3,
+56 error   code: 'EACCES',
+56 error   path: '/usr/lib/node_modules/karma-cli',
+56 error   fstream_type: 'Directory',
+56 error   fstream_path: '/usr/lib/node_modules/karma-cli',
+56 error   fstream_class: 'DirWriter',
+56 error   fstream_stack:
+56 error    [ '/usr/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23',
+56 error      '/usr/lib/node_modules/npm/node_modules/mkdirp/index.js:46:53',
+56 error      'Object.oncomplete (fs.js:107:15)' ] }
+57 error Please try running this command again as root/Administrator.
+58 error System Linux 3.13.0-40-generic
+59 error command "/usr/bin/node" "/usr/bin/npm" "install" "karma-cli" "-g"
+60 error cwd /home/tuuli/pluralsight_mean
+61 error node -v v0.10.32
+62 error npm -v 1.4.28
+63 error path /usr/lib/node_modules/karma-cli
+64 error fstream_path /usr/lib/node_modules/karma-cli
+65 error fstream_type Directory
+66 error fstream_class DirWriter
+67 error code EACCES
+68 error errno 3
+69 error stack Error: EACCES, mkdir '/usr/lib/node_modules/karma-cli'
+70 error fstream_stack /usr/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23
+70 error fstream_stack /usr/lib/node_modules/npm/node_modules/mkdirp/index.js:46:53
+70 error fstream_stack Object.oncomplete (fs.js:107:15)
+71 verbose exit [ 3, true ]

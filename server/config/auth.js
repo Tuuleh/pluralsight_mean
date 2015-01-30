@@ -33,6 +33,7 @@ exports.requiresApiLogin = function(req, res, next) {
        next(); 
     }
 }
+
 //a func for checking if user is an admin when requesting a page
 exports.requiresRole = function(role) {
     return function(req, res, next) {
