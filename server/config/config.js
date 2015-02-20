@@ -1,7 +1,7 @@
 //path module used to normalize root path
 var path = require('path');
 var rootPath = path.normalize(__dirname + "/../../");
-// var dbPassword = require('./db_password');
+// var dbPassword = require('./db_password'); <- this was an external that returned the mongodb password
 
 module.exports = {
     development : {
