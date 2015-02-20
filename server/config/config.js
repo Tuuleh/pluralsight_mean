@@ -12,7 +12,7 @@ module.exports = {
     production: {
         rootPath: rootPath,
         //locally: instead of ENV['KEY1'], use dbPassword you required
-        mongoConnectionString: 'mongodb://tuuli:'+ENV['KEY1']+'@ds039421.mongolab.com:39421/multivision',
+        mongoConnectionString: 'mongodb://tuuli:'+process.env.KEY1+'@ds039421.mongolab.com:39421/multivision',
         port: process.env.PORT || 80
     }
 }
