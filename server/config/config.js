@@ -1,6 +1,7 @@
 //path module used to normalize root path
 var path = require('path');
 var rootPath = path.normalize(__dirname + "/../../");
+var dbPassword = require('./db_password');
 
 module.exports = {
     development : {
@@ -10,7 +11,7 @@ module.exports = {
     },
     production: {
         rootPath: rootPath,
-        mongoConnectionString: 'mongodb://tuuli:qqmorenub1@ds039421.mongolab.com:39421/multivision',
+        mongoConnectionString: 'mongodb://tuuli:'+dbPassword+'@ds039421.mongolab.com:39421/multivision',
         port: process.env.PORT || 80
     }
 }

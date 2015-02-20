@@ -3,7 +3,10 @@ angular.module('app', ['ngResource','ngRoute']);
 angular.module('app').config(function($routeProvider, $locationProvider){
     var routeRoleChecks = {
         admin: {auth: function(mvAuth) {
-                    return auth.authorizeCurrentUserForRoute('admin');
+            return mvAuth.authorizeCurrentUserForRoute('admin');
+        }},
+        user: {auth: function(mvAuth) {
+            return mvAuth.authorizeAuthenticatedUserForRoute();
         }}
     }
 
@@ -20,6 +23,24 @@ angular.module('app').config(function($routeProvider, $locationProvider){
         //who doesn't have admin rights. We're going to redirect them back to the default page,
         //instead of the empty list page, using a route resolver
             resolve: routeRoleChecks.admin
+        })
+        .when('/signup', {
+            templateUrl:'/partials/account/signup',
+            controller:'mvSignupController'
+        })
+        .when('/profile', {
+            templateUrl: '/partials/account/profile',
+            controller: 'mvProfileController',
+            //we have a resolve object because we only want logged in users to be able to access this page
+            resolve: routeRoleChecks.user
+        })
+        .when('/courses', {
+            templateUrl: '/partials/courses/course-list',
+            controller: 'mvCourseListController'
+        })
+        .when('/courses/:id', {
+            templateUrl: '/partials/courses/course-details',
+            controller: 'mvCourseDetailController'
         })
 });
 

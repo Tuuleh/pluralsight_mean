@@ -21,6 +21,24 @@ angular.module('app').factory('mvAuth', function($http, $q, mvIdentity, mvUser) 
             });
             return dfd.promise;
         },
+        updateCurrentUser: function(newUserData) {
+            var dfd = $q.defer();
+            //we can get all the user information from mvIdentity.currentUser,
+            //but we don't want to modify it until we can be sure that the update
+            //will be successful, so instead, we make a copy of it:
+            var clone = angular.copy(mvIdentity.currentUser);
+            angular.extend(clone, newUserData);
+            //save posts the data to the server -> angular's $save calls post, not put,
+            //so we have to do something if we want to just update an existing user. We 
+            //created this new method in the user resource under mvUser.
+            clone.$update().then(function() {
+                mvIdentity.currentUser = clone;
+                dfd.resolve();
+            }, function(response) {
+                dfd.reject(response.data.reason);
+            });
+            return dfd.promise;
+        },
         logoutUser: function() {
             var dfd = $q.defer();
             // the object containing the logout parameter is sent with the post request simply
@@ -40,6 +58,28 @@ angular.module('app').factory('mvAuth', function($http, $q, mvIdentity, mvUser) 
                 //was logged in, but was not an admin
                 return $q.reject('not authorized');
             }
+        },
+        authorizeAuthenticatedUserForRoute: function(role) {
+            if(mvIdentity.isAuthenticated()) {
+                return true;
+            }
+            else {
+                //user was not logged in
+                return $q.reject('not logged in');
+            }
+        },
+        createUser: function(newUserData) {
+            var newUser = new mvUser(newUserData);
+            var dfd = $q.defer();
+            //newUser is a resource object -> we can call save on it 
+            newUser.$save().then(function(){
+                mvIdentity.currentUser = newUser;
+                dfd.resolve();
+            }, function(response) {
+                dfd.reject(response.data.reason);
+            })
+
+            return dfd.promise;
         }
     }
 });

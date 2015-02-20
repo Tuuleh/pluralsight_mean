@@ -1,6 +1,9 @@
 .navbar-right(ng-controller="mvNavBarLoginController")
     //the ng-hide directive makes the login form disappear when the user is authenticated
     form.navbar-form(ng-hide="identity.isAuthenticated()")
+        ul.nav.navbar-nav
+            li
+                a(href="/signup") Sign Up
         .form-group
             input.form-control(placeholder="Email", ng-model="username")
         .form-group
@@ -14,5 +17,7 @@
             ul.dropdown-menu
                 li
                     a(href="", ng-click="signout()") Sign out
+                li
+                    a(href="/profile") Profile
                 li(ng-show="identity.currentUser.isAdmin()")
                     a(href="/admin/user") User Admin
